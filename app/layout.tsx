@@ -1,22 +1,23 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import { karla } from "@/constants/fonts";
+import "./globals.css";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Elvian Cakes',
-  description: 'Center for worldclass cakes',
-}
+  title: "Elvian Cakes",
+  description: "Center for worldclass cakes",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <link rel="icon" href="/logo.png" sizes="any" />
+      </head>
+      <body className={karla.className}>{children}</body>
     </html>
-  )
+  );
 }

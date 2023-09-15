@@ -1,20 +1,26 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
+import COLORS from "./constants/colors";
 
 const config: Config = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    colors: COLORS,
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      gridTemplateRows: {
+        repeat: "repeat(auto-fill, minmax(150px, 1fr))",
       },
     },
   },
   plugins: [],
-}
-export default config
+  safelist: [
+    {
+      pattern:
+        /(bg|text|border|ring|grid-col|grid-row)-(primary|secondary|text|[0-9])/,
+    },
+  ],
+};
+export default config;
