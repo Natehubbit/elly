@@ -24,7 +24,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between overflow-hidden">
+    <main className="flex h-screen flex-col items-center justify-between overflow-hidden">
       <Container>
         <section className="px-20 flex flex-1 justify-center flex-col pb-36">
           <header className="mb-14">
@@ -40,7 +40,7 @@ export default function Home() {
             callback={onSelectCategory}
           />
         </section>
-        <section className="flex flex-1 relative pb-8 pr-4">
+        <section className="flex h-full w-full relative pb-8 pr-4">
           <div className="absolute h-full w-full flex">
             <HomePanel />
           </div>

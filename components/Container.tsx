@@ -5,9 +5,9 @@ import { Footer } from "./Footer";
 
 const Container: FC<ContainerProps> = ({ children }) => {
   return (
-    <section className="flex flex-1 flex-col w-full h-full">
+    <section className="flex flex-1 flex-col w-full h-full overflow-hidden">
       <Navbar />
-      <div className="flex flex-1 flex-row">{children}</div>
+      <div className="flex flex-1 h-full relative flex-row">{children}</div>
       <Footer />
     </section>
   );

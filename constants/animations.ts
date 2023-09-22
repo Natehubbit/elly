@@ -28,4 +28,10 @@ export const ANIMATIONS: Variants = {
     x: 0,
     opacity: 1,
   },
+  scaleUp: {
+    scale: 1.01,
+  },
+  scaleDown: {
+    scale: 1,
+  },
 };

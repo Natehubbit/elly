@@ -85,4 +85,7 @@ export const CAKES = [
     minWeight: 0.5,
     icing: ["butter", "whipcream", "fondant"],
   },
+  {
+    name: "Cheese Cake",
+  },
 ];
