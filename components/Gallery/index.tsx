@@ -4,7 +4,7 @@ import { GalleryItem } from "./GalleryItem";
 
 const Gallery = ({ data = [] }) => {
   return (
-    <div className="h-full relative flex-col grid grid-cols-3 grid-rows- gap-2">
+    <div className="h-full relative grid grid-cols-4 gap-3 pr-4">
       {data.map((item, i) => {
         return <GalleryItem key={i} />;
       })}

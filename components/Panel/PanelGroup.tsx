@@ -41,4 +41,6 @@ const PanelGroup = forwardRef<PanelGroupMethods, PanelGroupProps>(
   }
 );
 
+PanelGroup.displayName = "PanelGroup";
+
 export default PanelGroup;

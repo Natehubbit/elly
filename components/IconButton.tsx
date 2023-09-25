@@ -3,9 +3,10 @@ import React, { FC } from "react";
 import { Icon } from "./Icon";
 import { motion } from "framer-motion";
 import COLORS from "@/constants/colors";
+import Link from "next/link";
 
-const IconButton: FC<IconButtonProps> = ({ onClick, ...props }) => {
-  return (
+const IconButton: FC<IconButtonProps> = ({ href, onClick, ...props }) => {
+  const btn = (
     <motion.button
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.98 }}
@@ -16,6 +17,7 @@ const IconButton: FC<IconButtonProps> = ({ onClick, ...props }) => {
       <Icon {...props} />
     </motion.button>
   );
+  return href ? <Link href={href}>{btn}</Link> : btn;
 };
 
 export default IconButton;

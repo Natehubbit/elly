@@ -6,3 +6,18 @@ const getImageMeta = (url: string, cb: (val: HTMLImageElement) => void) => {
   };
   img.src = url;
 };
+
+export const debounce = (cb: () => void, delay = 300) => {
+  let timer: ReturnType<typeof setTimeout> | null;
+
+  return function () {
+    if (timer) {
+      clearTimeout(timer);
+    }
+
+    timer = setTimeout(() => {
+      cb();
+      timer = null;
+    }, delay);
+  };
+};

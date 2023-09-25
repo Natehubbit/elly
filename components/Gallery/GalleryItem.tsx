@@ -9,7 +9,7 @@ import { righteous } from "@/constants/fonts";
 
 export const GalleryItem = () => {
   return (
-    <div className="group relative flex flex-col cursor-pointer h-full w-full">
+    <div className="group relative flex flex-col cursor-pointer h-72 tem">
       <div className="rounded-xl flex-1 overflow-hidden">
         <div className="relative w-full h-full">
           <Image

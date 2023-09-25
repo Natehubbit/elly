@@ -8,11 +8,11 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: COLORS,
     extend: {
-      gridTemplateRows: {
+      gridTemplateColumns: {
         repeat: "repeat(auto-fill, minmax(150px, 1fr))",
       },
+      colors: COLORS,
     },
   },
   plugins: [],

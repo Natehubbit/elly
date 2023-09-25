@@ -64,4 +64,6 @@ const ProductCardList = forwardRef<
   );
 });
 
+ProductCardList.displayName = "ProductCardList";
+
 export default ProductCardList;
