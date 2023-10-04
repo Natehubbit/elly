@@ -1,3 +1,5 @@
+import { SideMenuOptionProps } from "@/types/components/SideMenuDTO";
+
 export const CATEGORY_DATA = [
   {
     id: "cakes",
@@ -89,3 +91,93 @@ export const CAKES = [
     name: "Cheese Cake",
   },
 ];
+
+export const CUSTOMIZE_CAKE_SIDE_MENU = [
+  {
+    id: "flavour",
+    label: "Flavour",
+  },
+  {
+    id: "tier",
+    label: "Tier",
+  },
+  {
+    id: "theme",
+    label: "Theme",
+  },
+  {
+    id: "colors",
+    label: "Colors",
+  },
+  {
+    id: "icing",
+    label: "Icing",
+  },
+] as const;
+
+export const CUSTOMIZE_CAKE_FORM = {
+  flavour: [
+    {
+      id: "redVelvet",
+      label: "Red Velvet",
+    },
+    {
+      id: "chocolate",
+      label: "Chocolate Cake",
+    },
+    {
+      id: "cheesecake",
+      label: "Cheese Cake",
+    },
+    {
+      id: "carrotcake",
+      label: "Carrot Cake",
+    },
+  ],
+  tier: [],
+  theme: [
+    {
+      id: "wedding",
+      label: "Wedding",
+    },
+    {
+      id: "birthday",
+      label: "Birthday",
+    },
+    {
+      id: "graduation",
+      label: "Graduation",
+    },
+    {
+      id: "other",
+      label: "Other",
+    },
+  ],
+  colors: [
+    {
+      id: "1",
+      value: ["#003049", "#D62828", "#F77F00", "#FCBF49", "#EAE2B7"],
+    },
+    {
+      id: "2",
+      value: ["#3D5A80", "#98C1D9", "#E0FBFC", "#EE6C4D", "#293241"],
+    },
+    {
+      id: "3",
+      value: ["#EF476F", "#FFD166", "#06D6A0", "#118AB2", "#073B4C"],
+    },
+    {
+      id: "4",
+      value: ["#000814", "#8F2D56", "#003566", "#FFC300", "#136F63"],
+    },
+    {
+      id: "5",
+      value: ["#E1CA96", "#073B3A", "#0B6E4F", "#3CCDBA", "#AF929D"],
+    },
+  ],
+  icing: [
+    { id: "butter", label: "Butter" },
+    { id: "whipcream", label: "Whip Cream" },
+    { id: "fondant", label: "Fondant" },
+  ],
+};

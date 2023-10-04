@@ -5,8 +5,10 @@ import { motion } from "framer-motion";
 import { FC } from "react";
 import Gallery from "../Gallery";
 import IconButton from "../IconButton";
+import Button from "../Button";
 
 const ProductPanel: FC<ProductPanelProps> = ({ type, onClose }) => {
+  const isCake = type === "cakes";
   return (
     <motion.div
       initial={{ x: "100%" }}
@@ -14,7 +16,7 @@ const ProductPanel: FC<ProductPanelProps> = ({ type, onClose }) => {
       exit={{ x: "100%" }}
       className="justify-center flex flex-col absolute h-[95%] overflow-hidden rounded-xl px-4 shadow-md w-full pb-4 bg-white"
     >
-      <header className="flex relative justify-between items-center mb-4">
+      <header className="flex relative justify-between items-center py-4">
         <motion.h3
           variants={ANIMATIONS}
           initial="slideOutLeft"
@@ -25,6 +27,13 @@ const ProductPanel: FC<ProductPanelProps> = ({ type, onClose }) => {
           {type.toUpperCase()}
         </motion.h3>
         <div className="flex flex-row items-center space-x-4">
+          {isCake && (
+            <Button
+              href={"/customize/cake"}
+              iconProps={{ name: "Plus" }}
+              label="Custom Cake"
+            />
+          )}
           <IconButton
             href={"/"}
             onClick={onClose}

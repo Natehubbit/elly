@@ -34,4 +34,13 @@ export const ANIMATIONS: Variants = {
   scaleDown: {
     scale: 1,
   },
+  scaleHide: {
+    scale:0,
+  },
+  scaleShow: {
+    scale:1,
+  },
+  scaleTap: {
+    scale: 0.9
+  }
 };

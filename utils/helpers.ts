@@ -1,3 +1,5 @@
+import { CUSTOMIZE_CAKE_FORM } from "@/constants/ui";
+
 const getImageMeta = (url: string, cb: (val: HTMLImageElement) => void) => {
   const img = new Image();
   img.onload = () => cb(img);
