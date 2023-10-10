@@ -2,6 +2,7 @@ export interface ChipProps {
 	id?: string;
 	label: string;
 	active?: boolean;
+	bg?: string;
 	onClick?: () => void;
 }
 

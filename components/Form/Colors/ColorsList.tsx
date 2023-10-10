@@ -114,20 +114,19 @@ const ColorsList = forwardRef<ColorBtnListMethods, ColorBtnListProps>(
 				})}
 				{!isPicker && !isMaxLength && (
 					<motion.button
+						type="button"
 						layout
 						className={`italic text-xs text-gray-500 rounded-lg h-16 w-16 relative border-2 border-gray-300 border-dashed justify-center items-center flex`}
 					>
-						choose color
+						Choose a color below
 					</motion.button>
 				)}
 				{isPicker && (
-					<div className="m-5">
-						<CustomColorPicker
-							onDelete={onDeleteColor}
-							ref={pickerRef}
-							onSelect={onSelectCustom}
-						/>
-					</div>
+					<CustomColorPicker
+						onDelete={onDeleteColor}
+						ref={pickerRef}
+						onSelect={onSelectCustom}
+					/>
 				)}
 			</motion.div>
 		);

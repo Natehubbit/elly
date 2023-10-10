@@ -45,7 +45,7 @@ export default function Home() {
 	return (
 		<section className="flex h-screen flex-col items-center justify-between overflow-hidden">
 			<Container>
-				<section className="px-20 flex flex-1 justify-center flex-col">
+				<section className="px-20 flex flex-1 justify-center pb-16 flex-col">
 					<header className="mb-14">
 						<h1 className={` text-5xl text-secondary`}>
 							<span className={righteous.className}>

@@ -4,7 +4,13 @@ import { Icon } from "../Icon";
 import { ChipProps } from "@/types/components/ChipDTO";
 import { ANIMATIONS } from "@/constants/animations";
 
-export const Chip: FC<ChipProps> = ({ active, label, id, onClick }) => {
+export const Chip: FC<ChipProps> = ({
+	active,
+	label,
+	bg = "bg-white",
+	id,
+	onClick,
+}) => {
 	const borderColor = active ? "border-primary" : "border-gray-300";
 	return (
 		<motion.button
@@ -16,7 +22,7 @@ export const Chip: FC<ChipProps> = ({ active, label, id, onClick }) => {
 			whileTap="scaleTap"
 			whileHover="scaleUp"
 			type="button"
-			className={`border-2 inline-flex px-4 items-center py-1 shadow-sm rounded-full ${borderColor}`}
+			className={`border-2 inline-flex px-4 items-center py-1 shadow-sm rounded-full ${borderColor} ${bg}`}
 		>
 			<p className={active ? "text-primary" : "text-gray-500"}>{label}</p>
 			{active && (

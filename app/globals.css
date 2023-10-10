@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --app-bg: #fcf1f1;
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --primary-color: #f16fd3;
-  --secondary-color: #8f4ebc;
-  --scroll-color: #f9c5ed;
+	--app-bg: #fcf1f1;
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
+	--primary-color: #f16fd3;
+	--secondary-color: #8f4ebc;
+	--scroll-color: #f9c5ed;
+	--white-color: #fff;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -21,24 +22,25 @@
 } */
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: var(--app-bg);
+	color: rgb(var(--foreground-rgb));
+	background: var(--app-bg);
 }
 
 /* width */
 ::-webkit-scrollbar {
-  width: 8px;
-  border-radius: 100%;
+	width: 8px;
+	border-radius: 100%;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: var(--app-bg);
+	background: var(--white-color);
+	border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--scroll-color);
-  opacity: 0.2;
-  border-radius: 10px;
+	background: var(--scroll-color);
+	opacity: 0.2;
+	border-radius: 10px;
 }

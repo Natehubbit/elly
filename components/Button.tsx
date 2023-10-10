@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { FC, useMemo } from "react";
 import { Icon } from "./Icon";
+import { ANIMATIONS } from "@/constants/animations";
 
 const Button: FC<ButtonProps> = ({
 	label,
@@ -20,6 +21,11 @@ const Button: FC<ButtonProps> = ({
 	const btn = useMemo(() => {
 		return (
 			<motion.button
+				variants={ANIMATIONS}
+				initial="hide"
+				animate="show"
+				exit="hide"
+				layout
 				type={type}
 				className={`rounded-full flex-row items-center inline-flex px-6 py-2 ${
 					bg && "hover:shadow-lg"

@@ -9,6 +9,7 @@ import Colors from "@/components/Form/Colors/ColorsList";
 import { ColorsForm } from "@/components/Form/Colors";
 import { Footer } from "@/components/Footer";
 import Container from "@/components/Container";
+import { AnimatePresence } from "framer-motion";
 
 const CustomCake = () => {
 	const query = useSearchParams();
@@ -30,12 +31,13 @@ const CustomCake = () => {
 				activeId={activeItem}
 				callback={onSideMenuChange}
 			/>
-			<CustomizePanel key={activeItem}>
-				{/* <Colors colors={CUSTOMIZE_CAKE_FORM[activeItem!][0].value} /> */}
-				<div className="pl-[35%]">
-					<ColorsForm />
-				</div>
-			</CustomizePanel>
+			<AnimatePresence>
+				<CustomizePanel key={activeItem}>
+					<div className="px-[30%] w-full h-full flex flex-col">
+						<ColorsForm />
+					</div>
+				</CustomizePanel>
+			</AnimatePresence>
 		</Container>
 	);
 };

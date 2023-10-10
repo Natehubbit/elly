@@ -59,7 +59,10 @@ const Chips = forwardRef<ChipsMethods, ChipsProps>(
 		}, [selected]);
 
 		return (
-			<motion.div layout className="flex-row space-x-2">
+			<motion.div
+				layout
+				className="flex flex-row gap-x-2 gap-y-2 content-end flex-wrap"
+			>
 				{data.map((item) => {
 					const onClick = () => onUpdate(item.id);
 
