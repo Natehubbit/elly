@@ -44,7 +44,7 @@ const HomeSegment = () => {
 
 	return (
 		<Container>
-			{/* <section className="px-20 flex flex-1 justify-center pb-16 flex-col">
+			<section className="px-20 flex flex-1 justify-center pb-16 flex-col">
 				<header className="mb-14">
 					<h1 className={` text-5xl text-secondary`}>
 						<span className={righteous.className}>
@@ -64,7 +64,7 @@ const HomeSegment = () => {
 					<HomePanel />
 				</div>
 				<PanelGroup onClose={onClosePanel} ref={panelRef} />
-			</section> */}
+			</section>
 		</Container>
 	);
 };
