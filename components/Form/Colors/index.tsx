@@ -1,3 +1,5 @@
+"use client";
+
 import React, { FormHTMLAttributes, HTMLAttributes, useRef } from "react";
 import ColorsList from "./ColorsList";
 import { righteous } from "@/constants/fonts";
@@ -28,7 +30,7 @@ export const ColorsForm = () => {
 				<header
 					className={`text-3xl mb-8 ${righteous.className} text-secondary`}
 				>
-					Let's Create your Cake!
+					{`Let's Create your Cake!`}
 				</header>
 				{/* <div className="flex-1 flex relative"> */}
 				<form className="h-full flex flex-col relative">
@@ -55,7 +57,7 @@ export const ColorsForm = () => {
 							What flavour(s) do you want?
 						</label>
 						<motion.div layout id="flavour" className="mt-3 mb-8">
-							<Chips callback={console.log} />
+							<Chips data={[]} callback={console.log} />
 						</motion.div>
 						<label htmlFor="flavour">
 							Any toppings for your cake?

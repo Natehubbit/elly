@@ -1,8 +1,7 @@
-import React, {FC} from 'react'
+import React, { FC } from "react";
 
-const Form:FC<{activeId:string}> = ({activeId}) => {
-  return (
-  )
-}
+const Form: FC<{ activeId: string }> = ({ activeId }) => {
+	return <></>;
+};
 
-export default Form
+export default Form;

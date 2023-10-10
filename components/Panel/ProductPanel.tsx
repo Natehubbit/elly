@@ -46,7 +46,13 @@ const ProductPanel: FC<ProductPanelProps> = ({ type, onClose }) => {
 			</header>
 			<div className=" flex-1 relative overflow-y-auto">
 				{/* TODO: OPTIMIZE GALLERY TO CUT DOWN ANIMATION STUTTER ON RENDER */}
-				<Gallery data={["1", "2", "3", "4", "5", "6", "7", "8", "9"]} />
+				<Gallery
+					data={
+						[
+							// "1", "2", "3", "4", "5", "6", "7", "8", "9"
+						]
+					}
+				/>
 			</div>
 		</motion.div>
 	);

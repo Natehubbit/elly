@@ -80,4 +80,6 @@ const Chips = forwardRef<ChipsMethods, ChipsProps>(
 	}
 );
 
+Chips.displayName = "Chips";
+
 export default Chips;

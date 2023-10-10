@@ -1,3 +1,4 @@
+"use client";
 import {
 	ColorBtnListMethods,
 	ColorBtnListProps,
@@ -132,5 +133,7 @@ const ColorsList = forwardRef<ColorBtnListMethods, ColorBtnListProps>(
 		);
 	}
 );
+
+ColorsList.displayName = "ColorsList";
 
 export default ColorsList;
