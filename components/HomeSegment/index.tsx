@@ -10,6 +10,7 @@ import ProductCardList from "../Card/ProductList";
 import { CATEGORY_DATA } from "@/constants/ui";
 import HomePanel from "../Panel/HomePanel";
 import PanelGroup from "../Panel/PanelGroup";
+import Container from "../Container";
 
 const HomeSegment = () => {
 	const search = useSearchParams();
@@ -42,13 +43,12 @@ const HomeSegment = () => {
 	}, []);
 
 	return (
-		<>
-			<section className="px-20 flex flex-1 justify-center pb-16 flex-col">
+		<Container>
+			{/* <section className="px-20 flex flex-1 justify-center pb-16 flex-col">
 				<header className="mb-14">
 					<h1 className={` text-5xl text-secondary`}>
 						<span className={righteous.className}>
 							Want a delicacy?
-							{/* <TextGroupAnimated />? */}
 						</span>
 					</h1>
 					<p className="text-primary">Choose your pick</p>
@@ -64,8 +64,8 @@ const HomeSegment = () => {
 					<HomePanel />
 				</div>
 				<PanelGroup onClose={onClosePanel} ref={panelRef} />
-			</section>
-		</>
+			</section> */}
+		</Container>
 	);
 };
 
