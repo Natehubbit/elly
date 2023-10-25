@@ -33,7 +33,7 @@ const CutomizePanel: FC<{ children: ReactNode; active?: string }> = ({
 					// position: "absolute",
 					// width: "100%",
 				}}
-				className="absolute w-full h-full pb-24 overflow-y-auto items-center"
+				className="absolute w-full h-full pb-10 overflow-y-auto items-center"
 				// key={active}
 			>
 				{children}

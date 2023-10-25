@@ -25,12 +25,10 @@ const Chips = forwardRef<ChipsMethods, ChipsProps>(
 		},
 		ref
 	) => {
-		console.log(data.length);
 		const [selected, setSelected] = useState<string[]>([]);
 		const selectedRef = useRef(selected);
 
 		const onUpdate = (id?: string) => {
-			console.log("III", id);
 			if (id) {
 				setSelected((val) =>
 					val.includes(id)

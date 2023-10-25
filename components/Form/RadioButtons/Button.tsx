@@ -57,10 +57,9 @@ export const RadioButton: FC<RadioButtonProps> = ({
 				id={id}
 				type="radio"
 				name={field}
-				checked={active}
-				defaultChecked={isActive}
+				defaultChecked={active}
 				value={value}
-				className="cursor-pointer -z-10 absolute border-2 text-gray-400 border-gray-300 bg-white"
+				className="invisible absolute"
 			></motion.input>
 		</motion.button>
 	);

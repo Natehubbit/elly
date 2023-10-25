@@ -38,7 +38,7 @@ const ColorsList = forwardRef<ColorBtnListMethods, ColorBtnListProps>(
 		const [color, setColor] = useState<string>();
 		const [selected, setSelected] = useState(colors);
 
-		const colorsRef = useRef<typeof colors>(useMemo(getMyColors, []));
+		const colorsRef = useRef<typeof colors>(colors);
 		const selectedRef = useRef<string[]>();
 		const pickerRef = useRef<CustomColorPickerMethods>(null);
 

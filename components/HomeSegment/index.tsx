@@ -59,8 +59,8 @@ const HomeSegment = () => {
 					callback={onSelectCategory}
 				/>
 			</section>
-			<section className="flex h-full w-full relative pb-8 pr-4">
-				<div className="absolute h-full w-full flex">
+			<section className="xl:flex hidden h-full w-full relative pb-8 pr-4">
+				<div className="absolute flex h-full w-full">
 					<HomePanel />
 				</div>
 				<PanelGroup onClose={onClosePanel} ref={panelRef} />

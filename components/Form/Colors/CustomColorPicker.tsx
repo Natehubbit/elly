@@ -28,7 +28,6 @@ const CustomColorPicker = forwardRef<
 	const picker = useRef<any>();
 
 	const onDeleteColor = () => {
-		console.log("DELETED", color);
 		onDelete && onDelete(color);
 		setColor(undefined);
 	};
@@ -42,13 +41,11 @@ const CustomColorPicker = forwardRef<
 	};
 
 	const onColorChange: ColorChangeHandler = (event) => {
-		console.log("slesdsf", event.hex);
 		setColor(event.hex);
 		onHide();
 	};
 
 	const debounceClose = () => {
-		console.log("debouncing");
 		const debounceCb = debounce(onHide, 100);
 		debounceCb();
 	};

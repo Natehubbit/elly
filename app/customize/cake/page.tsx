@@ -1,17 +1,16 @@
 import Container from "@/components/Container";
-import { ColorsForm } from "@/components/Form/Colors";
+import CakeInfoForm from "@/components/Form/CakeInfo";
 import CustomizePanel from "@/components/Panel/CutomizePanel";
-import SideMenu from "@/components/SideMenu";
-import { CUSTOMIZE_CAKE_SIDE_MENU } from "@/constants/ui";
+import { getMyColors } from "@/utils/helpers";
 
-const CustomCake = () => {
+const CustomCake = async () => {
+	const colors = await getMyColors();
+
 	return (
 		<Container>
-			<SideMenu options={CUSTOMIZE_CAKE_SIDE_MENU} />
+			{/* <SideMenu options={CUSTOMIZE_CAKE_SIDE_MENU} /> */}
 			<CustomizePanel>
-				<div className="px-[30%] w-full h-full flex flex-col">
-					<ColorsForm />
-				</div>
+				<CakeInfoForm colors={colors} />
 			</CustomizePanel>
 		</Container>
 	);

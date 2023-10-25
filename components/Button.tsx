@@ -17,7 +17,7 @@ const Button: FC<ButtonProps> = ({
 	href,
 }) => {
 	const hasHref = !!href;
-	console.log(typeof borderWidth);
+
 	const btn = useMemo(() => {
 		return (
 			<motion.button

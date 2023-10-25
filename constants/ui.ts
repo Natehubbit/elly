@@ -1,4 +1,6 @@
+import { ChipProps } from "@/types/components/ChipDTO";
 import { RadioButtonProps } from "@/types/components/RadioDTO";
+import { SelectProps } from "@/types/components/SelectDTO";
 import { SideMenuOptionProps } from "@/types/components/SideMenuDTO";
 
 export const CATEGORY_DATA = [
@@ -208,5 +210,32 @@ export const CAKE_SIZE_RADIO: RadioButtonProps[] = [
 		value: "XL",
 		id: "XL",
 		text: "XL",
+	},
+];
+
+export const OCCASSIONS: SelectProps["options"] = [
+	{ id: "wedding", label: "Wedding" },
+	{ id: "graduation", label: "Graduation" },
+	{ id: "birthday", label: "Birthday" },
+	{ id: "party", label: "Party" },
+	{ id: "other", label: "Other" },
+];
+
+export const FLAVOURS: ChipProps[] = [
+	{
+		label: "Chocolate Cake",
+		id: "CHOCOLATE",
+	},
+	{
+		label: "Cheese Cake",
+		id: "CHEESE",
+	},
+	{
+		label: "Red Velvet",
+		id: "RED_VELVET",
+	},
+	{
+		label: "Milk Cake",
+		id: "MILK_CAKE",
 	},
 ];

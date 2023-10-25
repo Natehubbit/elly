@@ -1,4 +1,5 @@
 import { Icon } from "@/components/Icon";
+import COLORS from "@/constants/colors";
 import { ColorBtnProps } from "@/types/components/FormDTO.ts/ColorsDTO";
 import { motion } from "framer-motion";
 import { FC } from "react";
@@ -23,15 +24,12 @@ const ColorBtn: FC<ColorBtnProps> = ({
 		<motion.button
 			layout
 			type="button"
-			animate={{
-				scale: active ? 1.2 : 1,
-			}}
 			exit={{ scale: 0 }}
 			onClick={onColorClick}
 			style={{ background: color }}
-			className={`rounded-lg h-16 w-16 relative ${
-				active ? "border-primary z-20" : "border-transparent"
-			} border-4 `}
+			className={`rounded-lg h-16 w-16 relative border-4 ${
+				active ? "border-primary z-20" : "transparent"
+			}`}
 		>
 			{closeable && (
 				<motion.div
