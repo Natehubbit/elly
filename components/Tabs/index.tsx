@@ -34,7 +34,7 @@ export const Tabs = ({ tabs = TABS }) => {
 
 	const tabBody = useMemo(
 		() => tabs.find((item) => item.id === active)?.body,
-		[active]
+		[active, tabs]
 	);
 
 	return (

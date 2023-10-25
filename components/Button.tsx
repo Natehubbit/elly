@@ -51,7 +51,16 @@ const Button: FC<ButtonProps> = ({
 				</span>
 			</motion.button>
 		);
-	}, [iconProps, label, borderWidth, borderColor, bg, textClass, textColor]);
+	}, [
+		iconProps,
+		label,
+		borderWidth,
+		borderColor,
+		bg,
+		textClass,
+		textColor,
+		type,
+	]);
 
 	return hasHref ? <Link href={href}>{btn}</Link> : btn;
 };

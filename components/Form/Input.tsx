@@ -1,10 +1,4 @@
-import React, {
-	FC,
-	InputHTMLAttributes,
-	forwardRef,
-	useImperativeHandle,
-	useRef,
-} from "react";
+import { InputHTMLAttributes, forwardRef } from "react";
 
 const Input = forwardRef<
 	HTMLInputElement,
@@ -20,5 +14,7 @@ const Input = forwardRef<
 		/>
 	);
 });
+
+Input.displayName = "Input";
 
 export default Input;
