@@ -3,34 +3,22 @@
 import Button from "@/components/Button";
 import Chips from "@/components/Chips";
 import { RadioButtons } from "@/components/Form/RadioButtons";
+import { ANIMATIONS } from "@/constants/animations";
 import { righteous } from "@/constants/fonts";
 import { CAKE_SIZE_RADIO, FLAVOURS, OCCASSIONS } from "@/constants/ui";
 import { ColorBtnListMethods } from "@/types/components/FormDTO.ts/ColorsDTO";
-import { AnimatePresence, motion } from "framer-motion";
-import {
-	FormEvent,
-	FormEventHandler,
-	Fragment,
-	useEffect,
-	useRef,
-	useState,
-} from "react";
-import ColorsList from "./Colors/ColorsList";
-import Input from "./Input";
-import { ANIMATIONS } from "@/constants/animations";
-import Counter from "./Counter";
-import {
-	usePathname,
-	useRouter,
-	useParams,
-	useSearchParams,
-} from "next/navigation";
-import { Select } from "../Select";
 import { SelectProps } from "@/types/components/SelectDTO";
 import { debounce } from "@/utils/helpers";
 import { formToJSON } from "axios";
-import { Textarea } from "./Textarea";
+import { AnimatePresence, motion } from "framer-motion";
+import { useRouter, useSearchParams } from "next/navigation";
+import { FormEventHandler, Fragment, useEffect, useRef, useState } from "react";
+import { Select } from "../Select";
 import CakeDeliveryForm from "./CakeDelivery";
+import ColorsList from "./Colors/ColorsList";
+import Counter from "./Counter";
+import Input from "./Input";
+import { Textarea } from "./Textarea";
 
 const CakeInfoForm = ({ colors }: { colors: string[] }) => {
 	const [showOccassionInput, setShowOccassionInput] = useState(false);
@@ -236,7 +224,7 @@ const CakeInfoForm = ({ colors }: { colors: string[] }) => {
 							<CakeDeliveryForm />
 						</div>
 					)}
-					<div key="submit" className="mt-10 flex">
+					<div key="submit" className="mt-5 flex">
 						<Button
 							type="submit"
 							borderWidth="0"

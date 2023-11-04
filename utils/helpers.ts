@@ -10,17 +10,18 @@ const getImageMeta = (url: string, cb: (val: HTMLImageElement) => void) => {
 	img.src = url;
 };
 
-export const debounce = (cb: () => void, delay = 300) => {
-	let timer: ReturnType<typeof setTimeout> | null;
+export const debounce = (
+	cb: (val?: any) => void | Promise<void>,
+	delay = 300
+) => {
+	let timer: ReturnType<typeof setTimeout> | undefined;
 
-	return function () {
-		if (timer) {
-			clearTimeout(timer);
-		}
+	return function (...args: any) {
+		clearTimeout(timer);
 
 		timer = setTimeout(() => {
-			cb();
-			timer = null;
+			cb(args);
+			timer = undefined;
 		}, delay);
 	};
 };

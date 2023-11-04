@@ -1,44 +1,91 @@
 "use client";
 
-import React, { FC, useEffect, useRef } from "react";
-import mapbox, { MapboxOptions } from "mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
+import React, {
+	FC,
+	forwardRef,
+	memo,
+	useEffect,
+	useImperativeHandle,
+	useRef,
+	useState,
+} from "react";
 import { MAPBOX_KEY } from "@/constants/config";
+import MapComponent, {
+	FullscreenControl,
+	GeolocateControl,
+	MapRef,
+	Marker as MarkerComponent,
+} from "react-map-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
+import { MapMethods, MapProps, Marker } from "@/types/components/MapDTO";
 
-mapbox.accessToken = MAPBOX_KEY;
+const Markers: FC<{ markers?: Marker[] }> = memo(({ markers }) => {
+	return markers?.map((marker) => {
+		return <MarkerComponent key={marker.id} {...marker} anchor="bottom" />;
+	});
+});
 
-const defaultProps = {
-	center: {
-		lat: 5.68914,
-		lng: -0.20212,
-	},
-	zoom: 13,
-};
-console.log(mapbox.accessToken);
-const Map: FC = (props) => {
-	const container = useRef<MapboxOptions["container"]>();
-	const map = useRef<mapbox.Map | null>(null);
-	const marker = useRef<mapbox.Marker | null>(null);
+const Map = forwardRef<MapMethods, MapProps>(
+	(
+		{
+			allowFullscreen,
+			allowGeoLocation,
+			markers,
+			currentLocationCallback,
+			children,
+			...props
+		},
+		ref
+	) => {
+		const map = useRef<MapRef>(null);
+		const [markerItems, setMarkerItems] = useState(markers);
 
-	useEffect(() => {
-		if (!map.current) {
-			map.current = new mapbox.Map({
-				container: container.current ?? "",
-				style: "mapbox://styles/mapbox/streets-v12",
-				center: defaultProps.center,
-				zoom: defaultProps.zoom,
-			});
-		}
+		useEffect(() => {
+			setMarkerItems(markers);
+		}, [markers]);
 
-		console.log("MAEKWE", marker.current);
-		if (!marker.current) {
-			marker.current = new mapbox.Marker()
-				.setOffset([240, -240])
-				.setLngLat(defaultProps.center)
-				.addTo(map.current);
-		}
-	}, []);
+		useImperativeHandle(
+			ref,
+			() => ({
+				flyTo(...args) {
+					console.log("SDF", args);
+					map.current?.flyTo(...args);
+				},
+				addMarker(newMarker: Marker, clear) {
+					setMarkerItems((items) => {
+						if (clear) {
+							return [newMarker];
+						}
 
-	return <div ref={container as any} className="h-full w-full" />;
-};
+						return items ? [...items, newMarker] : [newMarker];
+					});
+				},
+				removeMarker(id: string) {
+					setMarkerItems((items) =>
+						items?.filter((item) => item.id !== id)
+					);
+				},
+			}),
+			[]
+		);
+
+		return (
+			<MapComponent
+				ref={map}
+				mapboxAccessToken={MAPBOX_KEY}
+				mapStyle="mapbox://styles/mapbox/streets-v9"
+				style={{ height: "100%", width: "100%" }}
+				{...props}
+			>
+				{children}
+				<Markers markers={markerItems} />
+				{allowGeoLocation && (
+					<GeolocateControl onGeolocate={currentLocationCallback} />
+				)}
+				{allowFullscreen && <FullscreenControl />}
+			</MapComponent>
+		);
+	}
+);
 
 export default Map;

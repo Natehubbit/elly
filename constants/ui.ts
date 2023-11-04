@@ -1,7 +1,6 @@
 import { ChipProps } from "@/types/components/ChipDTO";
 import { RadioButtonProps } from "@/types/components/RadioDTO";
 import { SelectProps } from "@/types/components/SelectDTO";
-import { SideMenuOptionProps } from "@/types/components/SideMenuDTO";
 
 export const CATEGORY_DATA = [
 	{
