@@ -16,21 +16,25 @@ const HomeSegment = () => {
 	const search = useSearchParams();
 
 	const panelRef = useRef<PanelGroupMethods>(null);
+	const miniPanelRef = useRef<PanelGroupMethods>(null);
 	const productCardListRef = useRef<ProductCardListMethods>(null);
 
 	const onSelectCategory = (id?: string) => {
 		panelRef.current?.switch(id);
+		miniPanelRef.current?.switch(id);
 	};
 
 	const onClosePanel = () => {
 		productCardListRef.current?.switch();
 		panelRef.current?.switch();
+		miniPanelRef.current?.switch();
 	};
 
 	const init = useCallback(() => {
 		const currentType = search.get("type");
 		productCardListRef.current?.switch(currentType!);
 		panelRef.current?.switch(currentType!);
+		miniPanelRef.current?.switch(currentType!);
 	}, [search]);
 
 	const debounceRef = useMemo(() => {
@@ -44,9 +48,9 @@ const HomeSegment = () => {
 
 	return (
 		<Container>
-			<section className="px-20 flex flex-1 justify-center pb-16 flex-col">
-				<header className="mb-14">
-					<h1 className={` text-5xl text-secondary`}>
+			<section className=" px-5 lg:px-20 flex flex-1 justify-center pb-16 flex-col">
+				<header className="mb-4 lg:mb-14">
+					<h1 className={`text-2xl lg:text-5xl text-secondary`}>
 						<span className={righteous.className}>
 							Want a delicacy?
 						</span>
@@ -59,12 +63,12 @@ const HomeSegment = () => {
 					callback={onSelectCategory}
 				/>
 			</section>
-			<section className="xl:flex hidden h-full w-full relative pb-8 pr-4">
-				<div className="absolute flex h-full w-full">
+			<section className="hidden lg:flex h-full w-full absolute left-0 lg:relative pb-8 pr-4 ">
+				<div className="hidden absolute lg:flex h-full w-full">
 					<HomePanel />
 				</div>
-				<PanelGroup onClose={onClosePanel} ref={panelRef} />
 			</section>
+			<PanelGroup onClose={onClosePanel} ref={panelRef} />
 		</Container>
 	);
 };

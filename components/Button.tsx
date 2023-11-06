@@ -14,7 +14,9 @@ const Button: FC<ButtonProps> = ({
 	textColor = "primary",
 	textClass,
 	type = "submit",
+	className,
 	href,
+	...props
 }) => {
 	const hasHref = !!href;
 
@@ -27,13 +29,14 @@ const Button: FC<ButtonProps> = ({
 				exit="hide"
 				layout
 				type={type}
-				className={`rounded-full flex-row items-center inline-flex px-6 py-2 ${
+				className={`rounded-full flex-row items-center justify-center inline-flex px-6 py-2 ${
 					bg && "hover:shadow-lg"
-				} ring-${borderWidth} ring-${borderColor} bg-${bg}`}
+				} border-${borderWidth} border-${borderColor} bg-${bg} ${className}`}
 				whileHover={{
-					scale: 1.05,
+					scale: 1.04,
 				}}
-				whileTap={{ scale: 0.9 }}
+				whileTap={{ scale: 0.95 }}
+				{...props}
 			>
 				{Boolean(iconProps?.name) && (
 					<span className="mr-2">
@@ -60,6 +63,7 @@ const Button: FC<ButtonProps> = ({
 		textClass,
 		textColor,
 		type,
+		className,
 	]);
 
 	return hasHref ? <Link href={href}>{btn}</Link> : btn;

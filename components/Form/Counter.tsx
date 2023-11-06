@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import IconButton from "../IconButton";
 
-const Counter = ({ value = 1, max = 5, min = 1, name = "" }) => {
+const Counter = ({ value = 1, max = 5, min = 1, name = "", small = false }) => {
 	const [count, setCount] = useState(value);
 
 	const increase = () => {
@@ -29,18 +29,20 @@ const Counter = ({ value = 1, max = 5, min = 1, name = "" }) => {
 				name="Minus"
 				bg="white"
 				color="primary"
-				svgProps={{ size: 12 }}
+				svgProps={{ size: small ? 8 : 12 }}
 				onClick={decrease}
-				className="border-primary border-2 p-0 ${}"
+				className="border-2 p-0"
 			/>
-			<p className="w-8 text-center text-xl">{count}</p>
+			<p className={`w-8 text-center ${small ? "text-base" : "text-xl"}`}>
+				{count}
+			</p>
 			<IconButton
 				name="Plus"
 				bg="white"
 				color="primary"
-				svgProps={{ size: 12 }}
+				svgProps={{ size: small ? 8 : 12 }}
 				onClick={increase}
-				className="border-primary border-2 p-0"
+				className="border-2 p-0"
 			/>
 		</motion.div>
 	);

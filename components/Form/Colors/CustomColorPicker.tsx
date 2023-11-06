@@ -1,6 +1,5 @@
 import colorWheel from "@/assets/colorWheel.png";
 import { Icon } from "@/components/Icon";
-import { useOtsideClick } from "@/hooks/useOtsideClick";
 import {
 	CustomColorPickerMethods,
 	CustomColorPickerProps,
@@ -17,6 +16,7 @@ import {
 } from "react";
 import { ColorChangeHandler, SketchPicker } from "react-color";
 import ColorBtn from "./ColorBtn";
+import useOutsideClick from "@/hooks/useOutsideClick";
 
 const CustomColorPicker = forwardRef<
 	CustomColorPickerMethods,
@@ -50,7 +50,7 @@ const CustomColorPicker = forwardRef<
 		debounceCb();
 	};
 
-	useOtsideClick<HTMLDivElement>(picker, debounceClose, show);
+	useOutsideClick<HTMLDivElement>(picker, debounceClose, show);
 
 	useEffect(() => {
 		onSelect && color && onSelect(color);

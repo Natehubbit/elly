@@ -14,7 +14,7 @@ const ProductPanel: FC<ProductPanelProps> = ({ type, onClose }) => {
 			initial={{ x: "100%" }}
 			animate={{ x: 0 }}
 			exit={{ x: "100%" }}
-			className="justify-center flex flex-col absolute h-full overflow-hidden rounded-xl px-4 shadow-md w-full pb-4 bg-white"
+			className="justify-center w-full lg:w-1/2 flex flex-col absolute h-full overflow-hidden rounded-xl px-4 shadow-md pb-4 right-0 bg-white"
 		>
 			<header className="flex relative justify-between items-center py-4">
 				<motion.h3

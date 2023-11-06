@@ -7,6 +7,8 @@ import { LocationSearch } from "../LocationSearch";
 import Map from "../Map";
 import { Tabs } from "../Tabs";
 import Input from "./Input";
+import { MapProps } from "react-map-gl";
+import Button from "../Button";
 
 const defaultProps = {
 	center: {
@@ -40,8 +42,7 @@ const CakeDeliveryForm = () => {
 		);
 	};
 
-	// dropoffMap.current.
-
+	// TODO:: IMPLEMENT CHOOSE LOCATION ON MAP
 	const DELIVERY_TABS: TabProps[] = useMemo(
 		() => [
 			{
@@ -55,6 +56,7 @@ const CakeDeliveryForm = () => {
 								currentLocationCallback={console.log}
 								reuseMaps
 								allowGeoLocation
+								allowChooseLocOnMap
 								allowFullscreen
 								initialViewState={{
 									latitude: defaultProps.center.lat,
@@ -77,7 +79,7 @@ const CakeDeliveryForm = () => {
 				id: "pickup",
 				label: "Pickup",
 				body: (
-					<section className="flex py-5 space-x-2">
+					<section className="py-5 space-y-2">
 						<div className="h-60 w-80 rounded-md overflow-hidden border">
 							<Map
 								reuseMaps
@@ -86,6 +88,7 @@ const CakeDeliveryForm = () => {
 									longitude: defaultProps.center.lng,
 									zoom: 13,
 								}}
+								dragPan={false}
 								markers={[
 									{
 										latitude: defaultProps.center.lat,
@@ -95,8 +98,12 @@ const CakeDeliveryForm = () => {
 							/>
 						</div>
 						<div>
-							<h1>Agbogba Pleasant Hill, Accra</h1>
-							<h2>Opposite High Moral School</h2>
+							<h1 className="text-xl">
+								Agbogba Pleasant Hill, Accra
+							</h1>
+							<h2 className="text-base">
+								Opposite High Moral School
+							</h2>
 						</div>
 					</section>
 				),
@@ -111,11 +118,18 @@ const CakeDeliveryForm = () => {
 		console.log(value);
 	};
 
+	const onTimeChange: ChangeEventHandler<HTMLInputElement> = ({
+		target: { value },
+	}) => {
+		console.log(value);
+	};
+
 	return (
 		<div>
 			<label htmlFor="when">When do you want it?</label>
 			<motion.div layout id="when" className="mt-3 mb-8 flex space-x-2">
-				<Input type="date" onChange={onDateChange} />
+				<Input required type="date" onChange={onDateChange} />
+				<Input required type="time" onChange={onTimeChange} />
 			</motion.div>
 			<label htmlFor="delivery">Want us to deliver to you?</label>
 			<motion.div

@@ -11,6 +11,7 @@ export interface ButtonProps {
 	textColor?: keyof typeof COLORS;
 	borderWidth?: string;
 	textClass?: HTMLProps<HTMLElement>["className"];
+	className?: HTMLProps<HTMLElement>["className"];
 	href?: LinkProps["href"];
 	type?: "submit" | "button" | "reset";
 	onClick?: () => void;

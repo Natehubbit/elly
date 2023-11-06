@@ -230,7 +230,7 @@ const CakeInfoForm = ({ colors }: { colors: string[] }) => {
 							borderWidth="0"
 							bg="secondary"
 							textColor="white"
-							label="Next"
+							label={isInfo ? "Next" : "Finish"}
 							iconProps={{ name: "ArrowRight" }}
 						/>
 					</div>

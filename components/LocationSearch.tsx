@@ -1,9 +1,9 @@
-import { useOtsideClick } from "@/hooks/useOtsideClick";
 import useSearchPlaces from "@/hooks/useSearchPlaces";
 import { SearchBoxFeatureSuggestion } from "@mapbox/search-js-core";
 import { SearchBoxProps } from "@mapbox/search-js-react/dist/components/SearchBox";
 import { ChangeEventHandler, FC, useRef } from "react";
 import Input from "./Form/Input";
+import useOutsideClick from "@/hooks/useOutsideClick";
 
 interface LocationSearchProps extends Partial<SearchBoxProps> {
 	onSelect: (data: SearchBoxFeatureSuggestion) => void;
@@ -14,7 +14,7 @@ export const LocationSearch: FC<LocationSearchProps> = (props) => {
 	const inputRef = useRef<HTMLInputElement>(null);
 	const { places, onValueChange, onSelect, clearPlaces } = useSearchPlaces();
 
-	useOtsideClick(
+	useOutsideClick(
 		listRef,
 		() => {
 			console.log("CLEAERING PLACES");
