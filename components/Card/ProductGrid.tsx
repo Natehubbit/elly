@@ -24,6 +24,7 @@ export const ProductGrid = ({
 							style={{ width: "100%" }}
 							src={row1.imgUrl}
 							alt={row1.name}
+							sizes="500px, 500px"
 							fill
 						/>
 						<div className="absolute h-full w-full flex justify-center items-center">
@@ -36,6 +37,7 @@ export const ProductGrid = ({
 				<div className="grid grid-cols-2 gap-4">
 					{row2.map((item) => {
 						const onItemClick = () => onSelect(item.id);
+						console.log(item.id);
 						return (
 							<Link
 								href={item.path}
@@ -48,6 +50,7 @@ export const ProductGrid = ({
 									fill
 									src={item.imgUrl}
 									alt={item.name}
+									sizes="500px, 500px"
 								/>
 								<div className="absolute h-full w-full flex justify-center items-center">
 									<h1 className="p-2 px-5 text-lg bg-white rounded-lg text-primary">

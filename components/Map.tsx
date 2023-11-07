@@ -26,6 +26,7 @@ import IconButton from "./IconButton";
 
 const Markers: FC<{ markers?: Marker[] }> = memo(({ markers }) => {
 	return markers?.map((marker) => {
+		console.log("ID", marker.id);
 		return <MarkerComponent key={marker.id} {...marker} anchor="bottom" />;
 	});
 });

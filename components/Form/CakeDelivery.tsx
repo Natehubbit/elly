@@ -3,12 +3,12 @@ import { TabProps } from "@/types/components/TabsDTO";
 import { SearchBoxFeatureSuggestion } from "@mapbox/search-js-core";
 import { motion } from "framer-motion";
 import { ChangeEventHandler, useMemo, useRef } from "react";
-import { LocationSearch } from "../LocationSearch";
 import Map from "../Map";
 import { Tabs } from "../Tabs";
 import Input from "./Input";
 import { MapProps } from "react-map-gl";
 import Button from "../Button";
+import LocationSearch from "../LocationSearch";
 
 const defaultProps = {
 	center: {
@@ -28,8 +28,6 @@ const CakeDeliveryForm = () => {
 			},
 			properties: { mapbox_id },
 		} = data;
-
-		console.log("IIIDDDD", data);
 
 		dropoffMap.current?.flyTo({ center: { lat, lng }, offset: [0, 50] });
 		dropoffMap.current?.addMarker(
@@ -93,6 +91,7 @@ const CakeDeliveryForm = () => {
 									{
 										latitude: defaultProps.center.lat,
 										longitude: defaultProps.center.lng,
+										id: "pickup",
 									},
 								]}
 							/>

@@ -2,6 +2,7 @@
 
 import React, {
 	FC,
+	Fragment,
 	forwardRef,
 	useEffect,
 	useImperativeHandle,
@@ -41,7 +42,10 @@ const ProductCardList = forwardRef<
 
 	return (
 		<AnimatePresence>
-			<motion.div className="space-x-6 hidden lg:flex">
+			<motion.div
+				key={"productCard"}
+				className="space-x-6 hidden lg:flex"
+			>
 				{data.map((item, i) => {
 					const clickCb = () => onClick(item.id);
 					return (
@@ -61,7 +65,9 @@ const ProductCardList = forwardRef<
 					);
 				})}
 			</motion.div>
-			<ProductGrid onSelect={onClick} />
+			<Fragment key="productGrid">
+				<ProductGrid onSelect={onClick} />
+			</Fragment>
 		</AnimatePresence>
 	);
 });

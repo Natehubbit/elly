@@ -20,8 +20,6 @@ const Navbar: FC = () => {
 	const authRef = useRef<LoginModalMethods>(null);
 	const menuRef = useRef<HTMLDivElement>(null);
 
-	const ignoreClose = useRef(false);
-
 	const [showMenu, setShowMenu] = useState(false);
 
 	const openCart = () => {
@@ -83,16 +81,12 @@ const Navbar: FC = () => {
 		[]
 	);
 
-	useEffect(() => {
-		console.log("SHOWING:: ", showMenu);
-	}, [showMenu]);
-
 	return (
 		<>
 			<nav className="w-full overflow-visible inline-flex flex-row justify-between items-center">
 				<div className="flex items-center justify-center">
 					<Link href="/">
-						<Image src={logo} alt="logo" height={100} />
+						<Image src={logo} alt="logo" priority height={100} />
 					</Link>
 				</div>
 				<div className="flex-row hidden lg:flex">{btns}</div>

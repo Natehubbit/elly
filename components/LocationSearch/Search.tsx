@@ -2,14 +2,14 @@ import useSearchPlaces from "@/hooks/useSearchPlaces";
 import { SearchBoxFeatureSuggestion } from "@mapbox/search-js-core";
 import { SearchBoxProps } from "@mapbox/search-js-react/dist/components/SearchBox";
 import { ChangeEventHandler, FC, useRef } from "react";
-import Input from "./Form/Input";
+import Input from "../Form/Input";
 import useOutsideClick from "@/hooks/useOutsideClick";
 
 interface LocationSearchProps extends Partial<SearchBoxProps> {
 	onSelect: (data: SearchBoxFeatureSuggestion) => void;
 }
 
-export const LocationSearch: FC<LocationSearchProps> = (props) => {
+const Search: FC<LocationSearchProps> = (props) => {
 	const listRef = useRef<HTMLDivElement>(null);
 	const inputRef = useRef<HTMLInputElement>(null);
 	const { places, onValueChange, onSelect, clearPlaces } = useSearchPlaces();
@@ -70,3 +70,5 @@ export const LocationSearch: FC<LocationSearchProps> = (props) => {
 		</div>
 	);
 };
+
+export default Search;

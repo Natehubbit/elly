@@ -5,10 +5,8 @@ import { getMyColors } from "@/utils/helpers";
 
 const CustomCake = async () => {
 	const colors = await getMyColors();
-
 	return (
 		<Container>
-			{/* <SideMenu options={CUSTOMIZE_CAKE_SIDE_MENU} /> */}
 			<CustomizePanel>
 				<CakeInfoForm colors={colors} />
 			</CustomizePanel>

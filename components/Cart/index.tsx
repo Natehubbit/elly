@@ -55,6 +55,7 @@ const Cart = forwardRef<CartMethods, CartProps>(({}, ref) => {
 			{show && (
 				<>
 					<motion.section
+						key="backdrop"
 						initial={{ opacity: 0 }}
 						animate={{
 							opacity: 1,
@@ -66,6 +67,7 @@ const Cart = forwardRef<CartMethods, CartProps>(({}, ref) => {
 						className="absolute z-50 h-screen w-screen bg-[rgba(0,0,0,0.5)]"
 					/>
 					<motion.div
+						key="menu"
 						ref={panelRef}
 						initial={{
 							translateX: "100%",
