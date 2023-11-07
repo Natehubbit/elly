@@ -126,7 +126,7 @@ const Map = forwardRef<MapMethods, MapProps>(
 		return (
 			<MapComponent
 				ref={map}
-				mapboxAccessToken={MAPBOX_KEY}
+				mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_KEY}
 				mapStyle="mapbox://styles/mapbox/streets-v9"
 				style={{ height: "100%", width: "100%" }}
 				onClick={onSelectLocationOnMap}

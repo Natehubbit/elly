@@ -9,7 +9,7 @@ import { useState } from "react";
 
 const useSearchPlaces = () => {
 	const search = useSearchBoxCore({
-		accessToken: MAPBOX_KEY,
+		accessToken: process.env.NEXT_PUBLIC_MAPBOX_KEY,
 		country: "GH",
 		language: "en",
 	});
